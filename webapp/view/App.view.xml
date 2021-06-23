@@ -1,0 +1,82 @@
+<mvc:View
+   controllerName = "sap.ui.demo/walkthrough.controller.App"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc"
+   displayBlock="true" >
+   <Shell>
+      <App> 
+            <pages>
+                  <Page title="{i18n>homePageTitle}">
+                        <content>
+                              <Panel headerText="{i18n>panelTitle}"
+                                     class="sapUiResponsiveMargin"
+                                     width="auto">
+                                    <content>
+                                          <Button text="{i18n>buttonText}" 
+                                                  icon="sap-icon://delete"
+                                                  press=".onButtonClick"
+                                                  class="sapUiSmallMarginEnd" />
+                                          <Input value ="{/recipient/firstName}"
+                                                 description="Hello {/recipient/firstName}"
+                                                 valueLiveUpdate="true"
+                                                 width="60%" />
+                                          <Text text="Hello {/recipient/firstName}"
+                                                class="sapUiSmallMargin" />
+                                          <Button id="saveDialogButton"
+                                                  icon="sap-icon://save"
+                                                  text="{i18n>dialogButtonText}"
+                                                  press=".onOpenDialog"
+                                                  class="sapUiSmallMarginEnd" />
+
+                                          <Input id ="addUtterence"
+                                                placeholder="Type the utterence here and press enter to add"
+                                                width="70%"
+                                          />
+                                          <Button text="Add Bulk"
+                                                  press=".onOpenDialog"
+                                                  class="sapUiSmallMarginEnd" />
+
+                                          <List
+                                                id="utterenceList"
+                                                headerText="{i18n>listHeading}"
+                                                class="saUiResponsiveMargin"
+                                                width="auto"
+                                                items="{
+                                                            path: 'utterenceJson>/Utterences',
+                                                            sorter: {
+                                                                  path: 'Status',
+                                                                  descending: 'true'
+                                                            }
+                                                      }"
+                                                mode="SingleSelectLeft" >
+                                                <headerToolbar>
+                                                      <Toolbar>
+                                                      <Title text="{i18n>listHeading}" />
+                                                      <ToolbarSpacer />
+                                                      <Button icon="sap-icon://filter" press=".onOpenDialog" />
+                                                      <Button icon="sap-icon://add" press=".onAdd" />
+                                                      <Button icon="sap-icon://edit" press=".onOpenDialog" />
+                                                      <Button icon="sap-icon://delete" press=".onDelete" />
+                                                      <SearchField width="30%" search=".onSearchUtterences"/>
+                                                      </Toolbar>
+                                                </headerToolbar>
+                                                <items>
+                                                      <ObjectListItem
+                                                      title="{utterenceJson>UtterenceName}">
+                                                            <firstStatus>
+                                                                  <ObjectStatus text="{ path: 'utterenceJson>Status' }"
+                                                                                class="sapUiSmallMarginBottom"
+                                                                                state="Success" />
+                                                            </firstStatus>
+                                                      </ObjectListItem>
+                                                </items>
+                                          </List>                         
+                                    </content>
+                              </Panel>
+                        </content>
+                  </Page>
+            </pages>
+      </App>
+   </Shell>
+   
+</mvc:View> 

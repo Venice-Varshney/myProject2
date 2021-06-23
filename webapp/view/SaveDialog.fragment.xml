@@ -1,0 +1,18 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core" >
+    <Dialog id="saveDialog"
+            title="Do you want to save this {/recipient/firstName} ?">
+            <content>
+                <core:Icon
+                    src="sap-icon://business-by-design"
+                    size="8rem"
+                    class="sapUiMediumMargin" />
+            </content>
+            <beginButton>
+                <Button text="{i18n>dialogCloseText}"
+                        icon="sap-icon://accept"
+                        press=".onCloseDialog" />
+            </beginButton>
+    </Dialog>
+ </core:FragmentDefinition>

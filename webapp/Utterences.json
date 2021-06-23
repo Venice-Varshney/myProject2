@@ -1,0 +1,24 @@
+{
+    "Utterences": [
+      {
+        "UtterenceName": "I need help",
+        "Status": "New"
+      },
+      {
+        "UtterenceName": "Can you help me?",
+        "Status": ""
+      },
+      {
+        "UtterenceName": "I want help",
+        "Status": "New"
+      },
+      {
+        "UtterenceName": "help",
+        "Status": ""
+      },
+      {
+        "UtterenceName": "Need help",
+        "Status": ""
+      }
+    ]
+} 
